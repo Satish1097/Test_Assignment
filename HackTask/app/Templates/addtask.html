@@ -1,0 +1,25 @@
+{% extends 'default.html' %}
+
+{% block container %}
+<div class="box">
+   <div>
+       <h1 style="text-align: center;">Add Task</h1>
+       <form action="" method="POST" name="form">
+           {% csrf_token %}
+           <select name="user" id="user">
+               <option value="" disabled selected>Select User</option>
+               {% for i in data %}
+               <option value="{{ i.name }}">{{ i.name }}</option>
+               {% endfor %}
+           </select><br><br>
+           <textarea name="task" rows="5" placeholder="Assign Task"></textarea><br><br>
+           <select name="status" id="status">
+               <option value="" disabled selected>Status</option>
+               <option value="pending">Pending</option>
+               <option value="done">Done</option>
+           </select><br><br>
+           <input type="submit" value="Add Task">
+       </form>
+   </div>
+</div>
+{% endblock %}

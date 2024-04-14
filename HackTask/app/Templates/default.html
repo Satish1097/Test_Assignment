@@ -1,0 +1,25 @@
+{% block header %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="/Add_User">AddUser</a></li>
+            <li><a href="/Add_Task">AddTask</a></li>
+            <li><a href="/TaskList">TaskList</a></li>
+            <li><a href="/UserList">UserList</a></li>
+
+        </ul>
+    </div>
+    {% endblock %}
+    {% block container %}{% endblock %}
+    {% block footer %}
+</body>
+</html>
+{% endblock  %}
