@@ -1,25 +1,29 @@
-{% extends 'default.html' %}
+{% extends "default.html" %}
 
 {% block container %}
-<div class="box">
-   <div>
-       <h1 style="text-align: center;">Add Task</h1>
-       <form action="" method="POST" name="form">
-           {% csrf_token %}
-           <select name="user" id="user">
-               <option value="" disabled selected>Select User</option>
-               {% for i in data %}
-               <option value="{{ i.name }}">{{ i.name }}</option>
-               {% endfor %}
-           </select><br><br>
-           <textarea name="task" rows="5" placeholder="Assign Task"></textarea><br><br>
-           <select name="status" id="status">
-               <option value="" disabled selected>Status</option>
-               <option value="pending">Pending</option>
-               <option value="done">Done</option>
-           </select><br><br>
-           <input type="submit" value="Add Task">
-       </form>
-   </div>
+
+<div class="userform">
+    <div class="mid">
+        <h1>Add User</h1>
+        <br><br>
+        <form method="post">
+                {% csrf_token %}
+                <label for="user">User:</label>
+                <select name="user" id="user">
+                    {% for user in users %}
+                        <option value="{{ user.id }}">{{ user.name }}</option>
+                    {% endfor %}
+                </select><br><br>
+                <label for="task_detail">Task Detail:</label><br>
+                <input type="text" name="task_detail" id="task_detail"><br><br>
+                <label for="task_type">Task Type:</label>
+                <select name="task_type" id="" aria-placeholder="select user">
+                        <option value="Pending">Pending</option>
+                        <option value="Done">Done</option>
+                        </select><br><br>
+                <input type="submit" value="Submit">
+        </form>
+    </div>
 </div>
-{% endblock %}
+
+{% endblock  %}     Task html page

@@ -1,23 +1,22 @@
-{% extends "default.html" %} 
-{%load static%}
-{% block container %} 
-<form method='POST'>
-    {% csrf_token %}
-    <div class="adduser">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name">
-    </div>
+{% extends "default.html" %}
 
-    <div class="aduser">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email">
+{% block container %}
+
+<div class="userform">
+    <div class="mid">
+        <h1>Add User</h1>
+            <br><br>
+        <form action="" method="POST">
+            {% csrf_token %}
+            User Name : <br>
+            <input type=" text" name="name" required><br>
+            Email : <br>
+            <input type="email" name="email" required><br>
+            Mobile No : <br>
+            <input type="number" name="phone" required><br><br>
+
+            <button>Submit</button>
+        </form>
     </div>
-  
-    <div class="aduser">
-      <label for="Mobile">Mobile:</label>
-      <input type="number" id="mobile" name="mobile">
-    </div>
-  
-    <button type="submit" id='b'>Add_User</button>
-  </form>
-  {% endblock %}
+</div>
+{% endblock  %}    add user html
